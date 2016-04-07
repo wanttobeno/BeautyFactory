@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>美丽工厂</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(44, 47, 48);</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1366</width>
+      <height>768</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane{
+	border-width:2px;              
+	border-top-color: rgb(125, 0, 0);
+	border-left-color: transparent;
+	border-style: outset;
+	background: transparent;
+}
+QTabWidget::tab-bar{
+    alignment:left;
+}
+QTabBar::tab{
+	background:transparent;
+	color:white;
+	min-width:30ex;
+	min-height:10ex;
+}
+QTabBar::tab:hover{
+	background:rgb(255, 255, 255, 100);
+}
+QTabBar::tab:selected{
+	border-color: white;
+	background:white;
+	font: 75 10pt &quot;微软雅黑&quot;;
+	color: rgb(152, 31, 33);
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Image">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <attribute name="title">
+      <string>图像处理</string>
+     </attribute>
+     <widget class="QPushButton" name="buttonInitImage">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>10</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton { 
+	background-color:transparent;
+	border-radius: 3px; 
+	color: rgb(255, 255, 255); 
+} 
+QPushButton:hover { 
+	background-color: grey; 
+}</string>
+      </property>
+      <property name="text">
+       <string>返回原图</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>60</y>
+        <width>920</width>
+        <height>600</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="buttonSave">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>10</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton { 
+	background-color:transparent;
+	border-radius: 3px; 
+	color: rgb(255, 255, 255); 
+} 
+QPushButton:hover { 
+	background-color: grey; 
+}
+</string>
+      </property>
+      <property name="text">
+       <string>保存图片</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupFilters">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>40</y>
+        <width>281</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ActionsContextMenu</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(227, 226, 221);</string>
+      </property>
+      <property name="title">
+       <string>滤镜</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>241</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <property name="horizontalSpacing">
+         <number>7</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>2</number>
+        </property>
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="radioButton">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>羽化</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QRadioButton" name="radioButton_14">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>酷热</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QRadioButton" name="radioButton_3">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>黑白</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QRadioButton" name="radioButton_5">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>磨砂</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QRadioButton" name="radioButton_11">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>夏天</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QRadioButton" name="radioButton_4">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>模糊</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QRadioButton" name="radioButton_2">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>怀旧</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QRadioButton" name="radioButton_6">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>古典</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QRadioButton" name="radioButton_13">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>粉红</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QRadioButton" name="radioButton_8">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>骨感</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QRadioButton" name="radioButton_10">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>海洋</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QRadioButton" name="radioButton_9">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>冬天</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QRadioButton" name="radioButton_7">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>秋天</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QRadioButton" name="radioButton_12">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(227, 226, 221);</string>
+          </property>
+          <property name="text">
+           <string>春天</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="trsprtLabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>270</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>透明度：0%</string>
+       </property>
+      </widget>
+      <widget class="QSlider" name="horizontalSlider">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>290</y>
+         <width>241</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBox_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>240</y>
+         <width>116</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>不使用滤镜</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="buttonOpenImage">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton { 
+	background-color:transparent;
+	border-radius: 3px; 
+	color: rgb(255, 255, 255); 
+} 
+QPushButton:hover { 
+	background-color: grey; 
+}
+</string>
+      </property>
+      <property name="text">
+       <string>打开图片</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="buttonProcess">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>10</y>
+        <width>101</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton { 
+	background-color:transparent;
+	border-radius: 3px; 
+	color: rgb(255, 255, 255); 
+} 
+QPushButton:hover { 
+	background-color: grey; 
+}
+</string>
+      </property>
+      <property name="text">
+       <string>处理</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupAdjustors">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>380</y>
+        <width>281</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(227, 226, 221);</string>
+      </property>
+      <property name="title">
+       <string>调色板</string>
+      </property>
+      <widget class="QSlider" name="sliderContrast">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>160</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>200</number>
+       </property>
+       <property name="sliderPosition">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderBrightness">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>60</y>
+         <width>160</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-100</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderSaturation">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>90</y>
+         <width>160</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-50</number>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelContrast">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>对比度</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelBrightness">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>亮度</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelSaturation">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>饱和度</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>510</y>
+        <width>281</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(227, 226, 221);</string>
+      </property>
+      <property name="title">
+       <string>涂鸦</string>
+      </property>
+      <widget class="QSlider" name="sliderBlue">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>160</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>128</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderGreen">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>60</y>
+         <width>160</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>255</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderRed">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>90</y>
+         <width>160</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>255</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderThickness">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>120</y>
+         <width>160</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>40</number>
+       </property>
+       <property name="value">
+        <number>20</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelBlue">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>72</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelGreen">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>72</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelRed">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>72</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelThickness">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>72</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Thickness</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="labelOpenImage">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>320</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 12pt &quot;微软雅黑&quot;;
+color: rgb(170, 20, 7);</string>
+      </property>
+      <property name="text">
+       <string>请打开一张图片</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Video">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <attribute name="title">
+      <string>摄像头</string>
+     </attribute>
+     <widget class="QPushButton" name="buttonPhoto">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton { 
+	background-color:transparent;
+	border-radius: 3px; 
+	color: rgb(255, 255, 255); 
+} 
+QPushButton:hover { 
+	background-color: grey; 
+}</string>
+      </property>
+      <property name="text">
+       <string>拍照</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="buttonVideo">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>10</y>
+        <width>101</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton { 
+	background-color:transparent;
+	border-radius: 3px; 
+	color: rgb(255, 255, 255); 
+} 
+QPushButton:hover { 
+	background-color: grey; 
+}</string>
+      </property>
+      <property name="text">
+       <string>录像</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelCamera">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>60</y>
+        <width>920</width>
+        <height>600</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>1</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(227, 226, 221);</string>
+      </property>
+      <property name="text">
+       <string>开启人脸检测</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
